@@ -126,7 +126,7 @@ header {
 }
 
 .pen {
-	  background: url(../images/pen.jpg) no-repeat;
+	  background: url(../images/short_pen.JPG) no-repeat;
 		height:100vh;
 		grid-area:pen;
 		background-size:cover;
