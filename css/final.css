@@ -1,0 +1,205 @@
+* {
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	max-width: 100%;
+}
+html, body {
+	height:100%;
+	font-family: arial,helvetica,sans-serif;
+
+}
+
+nav {
+   background:#ff3333;
+   display:flex;
+   position:fixed;
+  /* left:0;
+  top:0; */
+  width:100%;
+  z-index:99;
+	font-family:'Aref Ruqaa', serif;
+
+}
+
+nav a:link {
+	text-align: center;
+	flex:1;
+	color:#fff;
+	padding:15px 30px;
+	text-decoration: none;
+}
+
+nav a:visited {
+	text-decoration: underline;
+	color:#eee;
+}
+nav a:hover {
+	background:#A0FDB6;
+	color:#4d004d;
+}
+
+nav a:active {
+	background:#edccff;
+	color:#8296FC;
+}
+
+
+/* Mobile First */
+#everywhere {
+  height: 100%;
+  max-width: 100%;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+  "video"
+	"writing"
+	"pen"
+  "footer";
+}
+
+
+
+
+/* === BG VIDEO === */
+#typing {
+	position: relative;
+	left:50%;
+	top:55%;
+  overflow: hidden;
+	transform: translate(-50%, -50%);
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1;
+	/* background: url(../images/lovenote.jpg) no-repeat; */
+	background-size:cover;
+
+}
+
+header {
+     /* max-height: 20vh;
+     width: 100vw; */
+  }
+
+.about_header {
+ background: url(../images/me.JPG) repeat fixed top center;
+ /* background-size: cover; */
+ height: 85vh;
+}
+
+.video {
+    height:100%;
+    width:100vw;
+		grid-area: video;
+    background-size: cover;
+
+
+}
+
+/* .play {
+	 transform: translateY(-50px);
+	 height:800px;
+} */
+
+
+.background {
+  background-color: #C30424;
+  padding: 20px;
+  columns: 3;
+	grid-area: writing;
+
+
+}
+
+#my_history {
+   font-size:18px;
+   font-family: 'Aref Ruqaa', serif;
+   color: #1a000d;
+}
+
+#me {
+	 color:#ffcccc;
+
+}
+
+.pen {
+	  background: url(../images/pen.jpg) no-repeat;
+		height:100vh;
+		grid-area:pen;
+		background-size:cover;
+}
+
+
+footer {
+	 padding:25px;
+	 font-weight: bold;
+	 background:#b8b894;
+	 grid-area: footer;
+
+}
+
+/*tablet view: inherits from mobile  */
+@media only screen and (min-width: 600px)  {
+  #everywhere {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "video video video video"
+    "writing writing pen pen"
+
+    "footer footer footer footer";
+}
+.pen {
+	  background: url(../images/short_pen.jpg) no-repeat;
+		height:100%;
+		grid-area:pen;
+		background-size:cover;
+}
+
+#my_history {
+   font-size:15px;
+   font-family: 'Aref Ruqaa', serif;
+   color: #1a000d;
+}
+
+
+.play {
+	 transform: scaleY(0.85);
+}
+
+}
+
+/* Desktop view: inherits from defalut of Mobile and Tablet */
+@media only screen and (min-width: 1000px)  {
+  #everywhere {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr;
+    grid-template-areas:
+    "video video video video"
+    "writing writing pen pen"
+
+    "footer footer footer footer";
+	}
+
+	.pen {
+		  background: url(../images/pen.jpg) no-repeat;
+			height:100%;
+			grid-area:pen;
+			background-size:cover;
+	}
+
+
+	.video {
+	    height:100vh;
+	    width:100vw;
+			grid-area: video;
+
+			;
+
+
+	}
+
+}

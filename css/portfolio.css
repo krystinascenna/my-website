@@ -1,0 +1,153 @@
+
+/* Mobile First */
+#everywhere {
+  height: 100%;
+  max-width: 100%;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+ "paper"
+ "click"
+ "quote"
+ "works"
+ "footer";
+}
+
+
+.papers {
+ background: url(../images/paper.jpg) no-repeat;
+ background-size: cover;
+ height: 100vh;
+ width: 100vw;
+ grid-area:paper;
+ display:flex;
+ justify-content:flex-start;
+ align-items:center;
+}
+
+
+
+
+@keyframes fadeIn {
+	from { opacity: 0.2;}
+	to {opacity: 1;}
+
+}
+
+#portfolio_articles
+{
+	display:flex;
+	justify-content: space-around;
+  height: 100%;
+	font-size: 15px;
+
+}
+
+#portfolio_articles div
+{
+  height: 33%;
+	font-size: 15px;
+
+}
+
+header hgroup {
+	background:rgb(236, 179, 255, 0.6);
+	padding:20px;
+
+}
+
+.my {
+  color: #b300b3;
+   }
+
+#writings{
+	    position: absolute;
+      font-size: 18px;
+      font-style: italic;
+      font-weight:bolder;
+      color: #660000;
+
+
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+.click {
+  text-align: center;
+  padding: 32px;
+  font-size: 40px;
+  font-style: oblique;
+  font-family: 'Aref Ruqaa', serif;
+  background: #ff4d4d;
+ grid-area: click;
+}
+
+.quotes {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+  background:#ffccff;
+  grid-area:quote;
+
+
+}
+
+/* Create four equal columns that sits next to each other */
+.works {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 50%;
+  padding: 0 4px;
+  grid-area:works;
+}
+
+.works img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  animation: fadeIn 10s;
+  animation-timing-function: ease;
+}
+
+footer {
+   grid-area:footer;
+}
+
+/*tablet view: inherits from mobile  */
+@media only screen and (min-width: 600px)  {
+  #everywhere {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "paper paper paper"
+    "click click click"
+    "quote quote quote"
+    "works works works"
+    "footer footer footer";
+
+}
+}
+
+/* Desktop view: inherits from defalut of Mobile and Tablet */
+@media only screen and (min-width: 1000px)  {
+  #everywhere {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr;
+    grid-template-areas:
+    "paper paper paper paper"
+    "click click click click"
+    "quote quote quote quote"
+    "works works works works"
+    "footer footer footer footer";
+
+
+	}
+}

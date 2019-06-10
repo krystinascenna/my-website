@@ -1,0 +1,158 @@
+
+
+/* Mobile First */
+#everywhere {
+  height: 100%;
+  max-width: 100%;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+  "sample"
+  "article"
+  "quotes"
+  "footer";
+}
+
+
+
+header {
+	width:100%;
+	height:100%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#writing_sample {
+	background: url(../images/heart.jpg) no-repeat fixed top center;
+	background-size: cover;
+  grid-area: sample;
+}
+
+header hgroup {
+	background:rgb(236, 179, 255, 0.6);
+	padding:20px;
+}
+
+#sample{
+	    position: absolute;
+      font-size: 18px;
+      font-style: italic;
+      font-weight:bolder;
+      color: #660000;
+
+
+}
+
+
+
+
+.article {
+	background:#4d004d;
+	padding:25px;
+  grid-area: article;
+}
+
+
+.article article {
+background:#ecb3ff;
+	padding:15px;
+	column-count: 3;
+	column-gap: 20px;
+
+}
+
+article p {
+	margin-bottom:20px;
+	font-size:15px;
+	line-height: 20px;
+}
+
+
+.quotes {
+	background:#e180ff;
+	padding:20px;
+	display:flex;
+	justify-content: space-between;
+	flex-wrap:wrap;
+  grid-area:quotes;
+  flex-direction: column;
+  align-items: center;
+
+
+
+
+}
+
+
+footer {
+   grid-area:footer;
+}
+@keyframes rotate {
+    0% {transform: rotateY(360deg)}
+}
+.quotes div {
+	background:#ffff66;
+	padding:20px;
+	text-align: center;
+	width:50%;
+	height: 50%;
+	line-height: 35px;
+	font-style: italic;
+  animation-name: rotate;
+  animation-duration: 8s;
+  box-shadow: 20px 20px 50px 15px grey;
+  margin:25px;
+}
+
+/*tablet view: inherits from mobile  */
+@media only screen and (min-width: 600px)  {
+  #everywhere {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "sample sample sample"
+    "article article article"
+    "quotes quotes quotes"
+    "footer footer footer";
+}
+
+.quotes {
+
+  flex-wrap: wrap;
+  flex-direction:column;
+
+
+
+}
+
+
+}
+
+/* Desktop view: inherits from defalut of Mobile and Tablet */
+@media only screen and (min-width: 1000px)  {
+  #everywhere {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr;
+    grid-template-areas:
+    "sample sample sample sample"
+    "article article article article"
+    "quotes quotes quotes quotes"
+    "footer footer footer footer";
+	}
+
+
+  .quotes {
+
+  	flex-wrap: wrap;
+    flex-direction:row;
+}
+
+.quotes div {
+
+	width:30%;
+	height: 30%;
+	margin:0px;
+}
+}
